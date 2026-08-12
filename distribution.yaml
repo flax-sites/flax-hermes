@@ -1,6 +1,6 @@
 name: flax-hermes
 version: 0.1.0
-description: "Connect Hermes Agent to Flax through OAuth for safe, reviewable site updates."
+description: "Give Hermes a safe workflow for creating reviewable updates to agentic Flax sites."
 hermes_requires: ">=0.12.0"
 author: "Flax"
-
+license: "MIT"

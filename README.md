@@ -1,12 +1,18 @@
-# Flax for Hermes
+# Flax for Hermes: agentic sites, with owners in control
 
 ![Flax logo](assets/flax-logo.png)
 
 Connect [Hermes Agent](https://github.com/NousResearch/hermes-agent) to
-[Flax](https://flaxsites.com) through MCP and OAuth. It gives your Hermes
-profile the guarded workflow for inspecting a site, validating a change, and
-creating a reviewable draft. Site owners retain final approval and deployment
-control.
+[Flax](https://flaxsites.com) through MCP and OAuth.
+
+Flax makes websites agentic without handing agents the keys. An agent can
+understand a site's published model, validate a proposed update, and prepare a
+previewable draft. The site owner remains in control: every change must be
+reviewed and explicitly approved before deployment.
+
+That makes Flax a practical path from "ask an agent to update my website" to
+a safe, auditable site-management workflow for businesses, agencies, and
+product teams.
 
 ## Install
 
@@ -37,6 +43,34 @@ Connect to https://example.com and prepare a draft that updates our contact numb
 Every change is validated and proposed as a draft. A site owner must preview
 and explicitly approve it before it is deployed.
 
+## Why agentic sites need guardrails
+
+An agentic site should be useful without becoming an uncontrolled publishing
+bot. This integration is designed around that boundary:
+
+- **Site-scoped access:** when a site is named, the agent discovers and uses
+  only that site's MCP endpoint.
+- **OAuth consent:** the owner authorizes access in their own browser; no
+  password, magic code, or token is ever pasted into chat.
+- **Schema-validated changes:** updates are checked against the site's real
+  data model before a draft can be created.
+- **Preview before publish:** agents prepare drafts; owners approve deployment.
+- **No infrastructure credentials:** MCP clients do not receive CDN,
+  publishing, payment, or deployment credentials.
+
+## For AI-agent builders
+
+The hosted Flax MCP endpoint is:
+
+```text
+https://agents.flaxsites.com/mcp
+```
+
+For a named site, begin at its exact `/.well-known/mcp.json` document and use
+the site-scoped URL it advertises. Read the
+[Flax agent documentation](https://flaxsites.com/docs/agents) for schemas,
+recipes, and the full OAuth flow.
+
 ## Updating
 
 To receive changes to this distribution:
@@ -59,3 +93,7 @@ enable newly added tools.
 
 See [Flax agent documentation](https://flaxsites.com/docs/agents) or contact
 [support@flaxsites.com](mailto:support@flaxsites.com).
+
+## License
+
+[MIT](LICENSE)
