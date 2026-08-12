@@ -1,0 +1,7 @@
+# This distribution deliberately includes no credentials. Each user completes
+# Flax OAuth in their own browser when they first connect.
+mcp_servers:
+  flax:
+    url: https://agents.flaxsites.com/mcp
+    auth: oauth
+

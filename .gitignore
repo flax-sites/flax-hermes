@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+auth.json
+memories/
+sessions/
+logs/
+workspace/
+state.db*
+mcp-tokens/
+
