@@ -24,6 +24,22 @@ Start a new Hermes session. On the first Flax request, Hermes opens a Connect
 Flax OAuth flow. Sign in and approve access in your own browser; never paste a
 password, magic code, or access token into a chat.
 
+## Add Flax to an existing Hermes profile
+
+[`mcp.json`](mcp.json) is the standard MCP document for the integration. In
+Hermes Desktop, paste it into the MCP editor and save; Hermes stores the same
+entry in `config.yaml` as `mcp_servers.flax`. In the CLI, the equivalent is:
+
+```bash
+hermes mcp add flax --url https://agents.flaxsites.com/mcp --auth oauth
+hermes mcp login flax
+```
+
+`flax` is the MCP server name. It is not a plugin name, and `mcp.json` does
+not make GitHub repositories searchable by itself. The pending Hermes catalog
+entry is what will make Flax discoverable through `hermes mcp catalog` after
+Nous reviews and merges it.
+
 ## Use
 
 For a particular site, name its domain in your request. The included skill

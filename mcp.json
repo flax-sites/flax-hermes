@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "flax": {
+      "url": "https://agents.flaxsites.com/mcp",
+      "auth": "oauth"
+    }
+  }
+}

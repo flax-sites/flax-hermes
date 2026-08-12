@@ -1,5 +1,5 @@
 name: flax-hermes
-version: 0.1.0
+version: 0.1.1
 description: "Give Hermes a safe workflow for creating reviewable updates to agentic Flax sites."
 hermes_requires: ">=0.12.0"
 author: "Flax"
