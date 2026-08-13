@@ -49,8 +49,24 @@ credential, or deployment credential in chat.
 - For images, use the Flax MCP image-upload flow. Do not inline image bytes in
   an MCP tool request.
 
+## Mechanics (non-interactive contexts)
+
+The MCP client normally handles OAuth and tool calls for you. When it cannot
+(non-interactive environments: `execute_code`, cron, background agents,
+subagents), use these references:
+
+- `references/oauth-discovery.md` — 401 → protected-resource → auth-server chain; account-level vs site-scoped.
+- `references/oauth-pkce-flow.md` — complete runnable PKCE script (register client → code → exchange).
+- `references/json-rpc-protocol.md` — initialize / tools/list / tools/call payloads, response envelope, error codes.
+- `references/token-refresh.md` — 3600s expiry; refresh without re-running PKCE.
+
+Order matters: discovery → PKCE → JSON-RPC. Every MCP call uses
+`Authorization: Bearer <access_token>` over HTTP POST.
+
 ## References
 
 - https://flaxsites.com/docs/agents
 - https://flaxsites.com/.well-known/flax-agent.json
+- https://flaxsites.com/schemas/flax/v1/site-data-model.schema.json
+- https://flaxsites.com/.well-known/flax-agent-recipes.v1.json
 

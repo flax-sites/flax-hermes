@@ -4,4 +4,9 @@ mcp_servers:
   flax:
     url: https://agents.flaxsites.com/mcp
     auth: oauth
-
+    # Route every write-capable tool (propose, upsert, upload) through Hermes's
+    # approval surface before it fires. Read-only tools run freely. This matches
+    # the integration's core principle: agents draft, owners approve.
+    trust: untrusted
+    timeout: 180
+    connect_timeout: 60
