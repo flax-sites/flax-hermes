@@ -59,6 +59,11 @@ Connect to https://example.com and prepare a draft that updates our contact numb
 Every change is validated and proposed as a draft. A site owner must preview
 and explicitly approve it before it is deployed.
 
+For a new site, choose one of two tools: `flax.sites.create_from_template`
+opens a complete starter flow, while `flax.sites.create_from_sections` opens
+the section-by-section custom site widget. Both return a continuation prompt
+after publishing so Hermes can keep working from the new site's URL.
+
 ## Why agentic sites need guardrails
 
 An agentic site should be useful without becoming an uncontrolled publishing
