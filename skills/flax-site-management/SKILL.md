@@ -63,10 +63,26 @@ subagents), use these references:
 Order matters: discovery → PKCE → JSON-RPC. Every MCP call uses
 `Authorization: Bearer <access_token>` over HTTP POST.
 
+## New website
+
+When the user wants a new website, choose one of two creation paths:
+
+- Call `flax.sites.create_from_template` when the owner wants to start from
+  a complete Flax site template. Its embedded app handles starter selection,
+  business details, sign-up, email verification, and initial publishing.
+- Call `flax.sites.create_from_sections` when the owner wants to compose the
+  site section by section with the custom site widget from the Flax homepage.
+  Its embedded app handles section and style choices, business details,
+  sign-up, email verification, and initial publishing.
+
+Both tools open an interactive MCP App. Stop after opening the selected app and
+let the user finish. When the site is published, use the returned site URL for
+subsequent management; the section-builder flow also hands a continuation
+prompt back to the agent so it can continue working on the new site.
+
 ## References
 
 - https://flaxsites.com/docs/agents
 - https://flaxsites.com/.well-known/flax-agent.json
 - https://flaxsites.com/schemas/flax/v1/site-data-model.schema.json
 - https://flaxsites.com/.well-known/flax-agent-recipes.v1.json
-
